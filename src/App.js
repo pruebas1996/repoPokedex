@@ -9,6 +9,7 @@ import {
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import PokedexContainer from './components/PokedexContainer';
+import NotFountPage from './components/NotFoundPage';
 function App() {
 
 
@@ -16,17 +17,18 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Router>
-
           <Switch>
             <ProtectedRoute path="/pokedex">
               <PokedexContainer />
             </ProtectedRoute>
             <Route path="/login" component={Login} />
-            <Route path='/'>
+            <Route exact path='/'>
               <Redirect to='/login' />
             </Route>
+            <Route path='*'>
+              <NotFountPage/>
+            </Route>
           </Switch>
-
         </Router>
       </header>
     </div>

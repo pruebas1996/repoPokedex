@@ -90,9 +90,7 @@ const PokedexContainer = () => {
     return (
         <div  >
             <Switch>
-                <Route path={`${match.path}/pokemon/:id/encounters`}>
-                    <PokemonEncounters />
-                </Route>
+                <Route path={`${match.path}/pokemon/:id/encounters`} component={ <PokemonEncounters />} />
                 <Route path={`${match.path}/pokemon/:id`}>
                     <div className='container-general'>
                         <PokemonDetails />
